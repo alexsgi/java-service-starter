@@ -1,0 +1,23 @@
+[Unit]
+Description=Java service starter
+
+[Service]
+# select valid user (on Raspberry Pi often pi)
+User=pi
+
+# set working directory
+WorkingDirectory=/usr/local/bin/javatest
+# set path of shell script with params for START, STOP and RELOAD
+ExecStart=/usr/local/bin/java-service-starter/testservice.sh start
+ExecStop=/usr/local/bin/java-service-starter/testservice.sh stop
+ExecReload=/usr/local/bin/java-service-starter/testservice.sh reload
+
+# optional settings (visit e.g. http://manpages.ubuntu.com/manpages/cosmic/man5/systemd.service.5.html)
+SuccessExitStatus=143
+TimeoutStopSec=10
+Restart=on-failure
+RestartSec=5
+# end optional settings
+
+[Install]
+WantedBy=multi-user.target
