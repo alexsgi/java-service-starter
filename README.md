@@ -50,6 +50,11 @@ If you should run into an error during the install just check the service logs w
 
 Some things that don't have to stay like they are:
  - the name of the service: change the name of the .service file and the value of SERVICE_NAME in service-starter.sh 
- - the JAR you want to start: store your own JAR toinjava-service-starter and adapt the paths in service-starter.sh
+ - the JAR you want to start: store your own JAR in java-service-starter and adapt the paths in service-starter.sh
  - the PID: change the PID in service-starter.sh
  - **the user, which starts the shell script**: in java-service-starter.service
+ - **the path to your Java**: in service-starter.sh
+
+
+Notice:
+The JAR in this repository just prints "Message by the Java app" in a while(true) loop with delay. Cancel with Ctrl+C.
