@@ -1,13 +1,12 @@
 #!/bin/sh
 SERVICE_NAME=java-service-starter
 PATH_TO_JAR=/usr/local/bin/java-service-starter/servicetester.jar
-PID_PATH_NAME=/tmp/testservice-pid
+PID_PATH_NAME=/tmp/chooseRandomPID
 
 case $1 in
     start)
         echo "Starting $SERVICE_NAME ..."
         if [ ! -f $PID_PATH_NAME ]; then
-            # nohup /var/www/html/java/jdk-16.0.1+4/bin/java -jar $PATH_TO_JAR >> /usr/local/bin/javatest/output.out 2>&1&
             nohup /path/to/java -jar $PATH_TO_JAR >> /usr/local/bin/java-service-starter/output.out 2>&1&
             echo $! > $PID_PATH_NAME
             echo "$SERVICE_NAME started ..."
@@ -34,7 +33,6 @@ case $1 in
             echo "$SERVICE_NAME stopped ...";
             rm $PID_PATH_NAME
             echo "$SERVICE_NAME starting ..."
-            #  nohup /var/www/html/java/jdk-16.0.1+4/bin/java -jar $PATH_TO_JAR >> /usr/local/bin/javatest/output.out 2>&1&
             nohup /path/to/java -jar $PATH_TO_JAR >> /usr/local/bin/java-service-starter/output.out 2>&1&
             echo $! > $PID_PATH_NAME
             echo "$SERVICE_NAME started ..."
