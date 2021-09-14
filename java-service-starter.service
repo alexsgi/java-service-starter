@@ -6,11 +6,11 @@ Description=Java service starter
 User=pi
 
 # set working directory
-WorkingDirectory=/usr/local/bin/javatest
+WorkingDirectory=/usr/local/bin/java-service-starter
 # set path of shell script with params for START, STOP and RELOAD
-ExecStart=/usr/local/bin/java-service-starter/testservice.sh start
-ExecStop=/usr/local/bin/java-service-starter/testservice.sh stop
-ExecReload=/usr/local/bin/java-service-starter/testservice.sh reload
+ExecStart=/usr/local/bin/java-service-starter/service-starter.sh start
+ExecStop=/usr/local/bin/java-service-starter/service-starter.sh stop
+ExecReload=/usr/local/bin/java-service-starter/service-starter.sh reload
 
 # optional settings (visit e.g. http://manpages.ubuntu.com/manpages/cosmic/man5/systemd.service.5.html)
 SuccessExitStatus=143
