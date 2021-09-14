@@ -27,9 +27,16 @@ Set correct permissions:
     chmod +x servicetester.jar
     chmod ugo+rw .
 
+Reload the daemon:
+
+    systemctl daemon-reload
+    
+You are ready to go!
+
 Start/stop/reload the service:
 
     systemctl java-service-starter start|stop|reload
+---
 
 Output and errors will be printed into output.out.
 
